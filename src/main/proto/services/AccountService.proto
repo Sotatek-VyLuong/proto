@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.lagom.grpc.services";
+
+package com.lagom.grpc;
+
+import "request/WalletRequest.proto";
+import "response/WalletResponseList.proto";
+
+service AccountService {
+  rpc getWalletRecordGrpc(WalletRequestGRPC) returns (WalletResponseListGrpc) {};
+}

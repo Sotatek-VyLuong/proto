@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.lagom.grpc.response";
+
+package com.lagom.grpc;
+
+message WalletResponseGRPC {
+  string currencySymbol = 1;
+  string coingeckoId = 2;
+  string icon = 3;
+  int32 currencyId = 4;
+  string availableBalance = 5;
+  message WalletRecordGRPC {
+    int32 currencyId = 1;
+    int32 networkId = 2;
+    string availableBalance = 3;
+  }
+  repeated WalletRecordGRPC recordInNetworkDtos = 6;
+}

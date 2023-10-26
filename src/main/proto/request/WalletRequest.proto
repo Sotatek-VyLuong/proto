@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.lagom.grpc.request";
+
+package com.lagom.grpc;
+
+message WalletRequestGRPC {
+  int64 user_id = 1;
+}
